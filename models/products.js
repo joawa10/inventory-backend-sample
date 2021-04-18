@@ -1,4 +1,5 @@
 // Model (Data)
+const db = require('../util/database');
 
 module.exports = class Inventory {
   constructor(item_id, item_name, categories, quantity, price) {
@@ -10,21 +11,6 @@ module.exports = class Inventory {
   }
 
   static fetchAll() {
-    return [
-      {
-        item_id: 1,
-        item_name: 'itemName1',
-        categories: 'category1',
-        quantity: 1,
-        price: 50
-      },
-      {
-        item_id: 2,
-        item_name: 'itemName2',
-        categories: 'category2',
-        quantity: 5,
-        price: 100
-      }
-    ];
+    return db.execute('SELECT * FROM inventory.products');
   }
 }
