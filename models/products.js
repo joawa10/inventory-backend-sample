@@ -14,13 +14,9 @@ module.exports = class Inventory {
     return db.execute('SELECT * FROM inventory.products');
   }
 
-  // static post(item_id, item_name, category_id, quantity, price) {
-  //   return db.execute('INSERT INTO inventory.products (item_id, item_name, category_id, quantity, price) VALUES (?)', [item_id, item_name, category_id, quantity, price]);
-  // }
-
-  // static post(item_name, category_id, quantity, price) {
-  //   return db.execute('INSERT INTO inventory.products (item_name, category_id, quantity, price) VALUES (?)', [item_name, category_id, quantity, price]);
-  // }
+  static post(item_id, item_name, category_id, quantity, price) {
+    return db.execute('INSERT INTO inventory.products (item_id, item_name, category_id, quantity, price) VALUES (?)', [item_id, item_name, category_id, quantity, price]);
+  }
 
   static update(item_id, item_name, category_id, quantity, price) {
     return db.execute('UPDATE inventory.products SET item_name = ?, category_id = ?, quantity = ?, price = ? WHERE item_id = ?', [item_name, category_id, quantity, price, item_id]);
