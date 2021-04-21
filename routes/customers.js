@@ -11,6 +11,6 @@ router.post('/', customersController.postCustomers);
 
 router.put('/', customersController.putCustomers);
 
-router.delete('/:item_id', customersController.deleteCustomers);
+router.delete('/:customers_id', customersController.deleteCustomers);
 
 module.exports = router;

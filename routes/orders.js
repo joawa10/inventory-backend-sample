@@ -11,6 +11,6 @@ router.post('/', ordersController.postOrders);
 
 router.put('/', ordersController.putOrders);
 
-router.delete('/:item_id', ordersController.deleteOrders);
+router.delete('/:orders_id', ordersController.deleteOrders);
 
 module.exports = router;
