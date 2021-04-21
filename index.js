@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const productsRoutes = require('./routes/products');
 const customersRoutes = require('./routes/customers');
 const ordersRoutes = require('./routes/orders');
+const order_detailsRoutes = require('./routes/order_details');
 
 const errorController = require('./controllers/error');
 
@@ -24,6 +25,7 @@ app.use((req, res, next) => {
 app.use('/products', productsRoutes);
 app.use('/customers', customersRoutes);
 app.use('/orders', ordersRoutes);
+app.use('/order_details', order_detailsRoutes);
 
 app.use(errorController.get404);
 app.use(errorController.get500);
