@@ -3,7 +3,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 const productsRoutes = require('./routes/products');
-const customersRoutes = require('./routes/customers')
+const customersRoutes = require('./routes/customers');
+const ordersRoutes = require('./routes/orders');
 
 const errorController = require('./controllers/error');
 
@@ -22,6 +23,7 @@ app.use((req, res, next) => {
 
 app.use('/products', productsRoutes);
 app.use('/customers', customersRoutes);
+app.use('/orders', ordersRoutes);
 
 app.use(errorController.get404);
 app.use(errorController.get500);
