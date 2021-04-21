@@ -1,6 +1,6 @@
 // Controller (Fetch the data)
 
-const Products = require('../models/products');
+const Products = require('../models/product');
 
 exports.getAllProducts = async (req, res, next) => {
   try {
