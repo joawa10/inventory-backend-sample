@@ -2,16 +2,17 @@
 const db = require('../util/database');
 
 module.exports = class Inventory {
-  constructor(item_id, item_name, category_id, quantity, price) {
+  constructor(item_id, item_name, category_id, category_name, quantity, price,) {
     this.item_id = item_id;
     this.item_name = item_name;
     this.category_id = category_id;
+    this.category_name = category_name;
     this.quantity = quantity;
     this.price = price;
   }
 
   static fetchAll() {
-    return db.execute('SELECT * FROM inventory.products');
+    return db.execute('SELECT item_id, item_name, category_name, quantity, price FROM inventory.products, inventory.category  WHERE products.category_id = category.category_id');
   }
 
   static post(item_name, category_id, quantity, price) {
