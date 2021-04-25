@@ -2,6 +2,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
+const authRoutes = require('./routes/auth')
 const productsRoutes = require('./routes/products');
 const customersRoutes = require('./routes/customers');
 const ordersRoutes = require('./routes/orders');
@@ -23,6 +24,7 @@ app.use((req, res, next) => {
     next(); 
 });
 
+app.use('/auth', authRoutes);
 app.use('/products', productsRoutes);
 app.use('/customers', customersRoutes);
 app.use('/orders', ordersRoutes);

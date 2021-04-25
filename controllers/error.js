@@ -5,10 +5,12 @@ exports.get404 = (req, res, next) => {
 }
 
 exports.get500 = (error, req, res, next) => {
+  const data = error.data;
   res.status(error.status || 500);
   res.json({
     error: {
-      message: error.message
+      message: error.message,
+      data: data,
     },
   });
 };
