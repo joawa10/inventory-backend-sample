@@ -8,6 +8,7 @@ const customersRoutes = require('./routes/customers');
 const ordersRoutes = require('./routes/orders');
 const order_detailsRoutes = require('./routes/order_details');
 const categoriesRoutes = require('./routes/categories');
+const usersRoutes = require('./routes/user');
 
 const errorController = require('./controllers/error');
 
@@ -30,6 +31,7 @@ app.use('/customers', customersRoutes);
 app.use('/orders', ordersRoutes);
 app.use('/order_details', order_detailsRoutes);
 app.use('/categories', categoriesRoutes);
+app.use('/users', usersRoutes);
 
 app.use(errorController.get404);
 app.use(errorController.get500);
