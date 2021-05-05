@@ -10,7 +10,7 @@ module.exports = class Inventory {
   }
 
   static fetchAll() {
-    return db.execute('SELECT orders_id, customers_name, address FROM inventory.orders, inventory.customers WHERE orders.orders_id = customers.customers_id');
+    return db.execute('SELECT orders_id, customers_name, address FROM inventory.orders, inventory.customers WHERE orders.customers_id = customers.customers_id');
   }
 
   static post(customers_id) { //changed
